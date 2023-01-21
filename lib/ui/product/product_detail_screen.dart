@@ -21,10 +21,13 @@ class ProductDetailScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Center(
-            child: Image.network(
-              product.imageUrl,
-              height: 400,
-              fit: BoxFit.cover,
+            child: Hero(
+              tag: product.id,
+              child: Image.network(
+                product.imageUrl,
+                height: 400,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           const SizedBox(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_app/ui/product/product_detail_screen.dart';
 
 import '../../../model/product_model.dart';
+import '../../product/product_detail_screen.dart';
 
 class ProductCard extends StatelessWidget {
   const ProductCard(
@@ -29,38 +29,47 @@ class ProductCard extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Image.network(
-                product.imageUrl,
-                height: 160,
-                width: 128,
-                fit: BoxFit.cover,
+              Center(
+                child: Hero(
+                  tag: product.id,
+                  child: Image.network(
+                    product.imageUrl,
+                    height: 160,
+                    width: 140,
+                    fit: BoxFit.cover,
+                  ),
+                ),
               ),
               const SizedBox(
                 height: 20,
               ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    product.prodName,
-                    style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      product.prodName,
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),
                     ),
-                  ),
-                  const SizedBox(
-                    height: 4,
-                  ),
-                  Text(
-                    "Rs. ${product.price.toString()}",
-                    style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
-                      color: Colors.green,
+                    const SizedBox(
+                      height: 4,
                     ),
-                  ),
-                ],
+                    Text(
+                      "Rs. ${product.price.toString()}",
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                        color: Colors.green,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),

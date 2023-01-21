@@ -37,7 +37,7 @@ class HomeScreen extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
-                  color: kPrimaryColor,
+                  color: Colors.black,
                 ),
               ),
             ),
@@ -61,7 +61,7 @@ class HomeScreen extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
-                  color: kPrimaryColor,
+                  color: Colors.black,
                 ),
               ),
             ),
@@ -69,7 +69,7 @@ class HomeScreen extends StatelessWidget {
               physics: const NeverScrollableScrollPhysics(),
               shrinkWrap: true,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                childAspectRatio: 0.8,
+                childAspectRatio: 0.75,
                 crossAxisCount: 2,
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10,
